@@ -1,4 +1,5 @@
 import React from "react";
+import "./selectitem.scss";
 
 function SelectItem(props) {
   const onSelect = (e) => {
@@ -7,11 +8,13 @@ function SelectItem(props) {
   };
 
   return (
-    <select onChange={onSelect}>
-      {props.options.map((option) => (
-        <option value={option.value}>{option.label}</option>
-      ))}
-    </select>
+    <div>
+      <select className="custom-select" onChange={onSelect}>
+        {props.options.map((option) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </div>
   );
 }
 export default SelectItem;
